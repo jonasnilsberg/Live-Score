@@ -1,0 +1,22 @@
+.league-container {
+    margin: 0em 1em;
+}
+
+.league-header {
+    background-color: black;
+    height: 30px;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+}
+
+.matches-container {
+    background-color: #F5F5F5;
+    padding-top: 5px;
+}
+
+@media only screen and (min-width: 768px) {
+    .league-container {
+        margin: 0em 10em;
+    }
+}
