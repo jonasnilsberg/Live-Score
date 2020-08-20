@@ -14,7 +14,6 @@ class League extends React.Component {
     }
 
     componentDidMount() {
-        console.log("test");
         this.fetchFixtures();
     }
 
@@ -81,9 +80,19 @@ class League extends React.Component {
             event_date: "2018-08-11T15:00:00+01:00",
         }*/
         const matches = []
-        for (let i = 0; i < this.state.fixtures.length; i++) {
-            matches.push(<Match key={this.state.fixtures[i].fixture_id} fixture={this.state.fixtures[i]}></Match>);
+        if(this.state.fixtures.length === 0){
+            matches.push(
+                <div className="no-matches-container">
+                    <h3>No matches today</h3>
+                </div>
+            )
+        } else {
+            for (let i = 0; i < this.state.fixtures.length; i++) {
+                matches.push(<Match key={this.state.fixtures[i].fixture_id} fixture={this.state.fixtures[i]}></Match>);
+            }
         }
+
+        
         return (
             <div className="league-container">
                 <div className="league-header">
